@@ -25,6 +25,7 @@ pipeline {
     post{
         always{
             echo "This section run irrespective of success or failure"
+            deleteDir() // this will create the workspace files in jenkins agent
         }
         success{
             echo "This section runs when pipeline is success"
