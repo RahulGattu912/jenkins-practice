@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    // agent any 
+    // if we want to run this pipeline in agent-1
+    agent{
+        label 'AGENT-1'
+    }
     stages {
         stage('Build') {
             steps {
