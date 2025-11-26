@@ -9,13 +9,13 @@ pipeline {
         // disableConcurrentBuilds() // disable concurrent execution of builds
         // retry(3) // retries the build for specific number of times if build fails
     }
-    // parameters{
-    //     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Hello')
-    //     text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
-    //     booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
-    //     choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
-    //     password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
-    // }
+    parameters{
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Hello')
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+    }
     stages {
         stage('Build') {
             steps {
@@ -33,15 +33,15 @@ pipeline {
                 echo "This is deploy"
             }
         }
-        // stage('Print Params'){
-        //     steps{
-        //         echo "Hello ${params.PERSON}"
-        //         echo "Biography: ${params.BIOGRAPHY}"
-        //         echo "Toggle: ${params. TOGGLE}"
-        //         echo "Choice: ${params. CHOICE}"
-        //         echo "Password: ${params.PASSWORD}"
-        //     }
-        // }
+        stage('Print Params'){
+            steps{
+                echo "Hello ${params.PERSON}"
+                echo "Biography: ${params.BIOGRAPHY}"
+                echo "Toggle: ${params. TOGGLE}"
+                echo "Choice: ${params. CHOICE}"
+                echo "Password: ${params.PASSWORD}"
+            }
+        }
     }
 
     post{
