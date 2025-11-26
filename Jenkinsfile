@@ -33,8 +33,16 @@ pipeline {
         }
 
         stage('Deploy') {
+            // // when branch is production, deploy
+            // when{
+            //     branch 'production'
+            // }
+            when{
+                branch 'main'
+            }
             steps {
                 echo "This is deploy"
+                // error 'pipeline failed'
             }
         }
 
@@ -48,6 +56,7 @@ pipeline {
             }
         }
 
+        // asks for approval
         stage('Approval') {
             input {
                 message "Should we continue?"
