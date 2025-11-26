@@ -17,4 +17,16 @@ pipeline {
             }
         }
     }
+
+    post{
+        always{
+            echo "This section run irrespective of success or failure"
+        }
+        success{
+            echo "This section runs when pipeline is success"
+        }
+        failure{
+            echo "This section runs when pipeline fails"
+        }
+    }
 }
