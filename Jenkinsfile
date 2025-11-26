@@ -27,8 +27,7 @@ pipeline {
         }
         failure{
             echo "This section runs when pipeline fails"
-            // we can integrate slack or any other message service, so when the 
-            // Build fails it notifies in slack. 
+            // we can integrate slack or any other message service, so when the Build fails it notifies in slack. 
         }
     }
 }
