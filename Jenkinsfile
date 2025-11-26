@@ -5,7 +5,7 @@ pipeline {
         label 'AGENT-1'
     }
     options{
-        // timeout(time:10,unit:'MINUTES') // means if the build time exceeds 10 minutes, automatically stop the pipeline.
+        timeout(time:10,unit:'MINUTES') // means if the build time exceeds 10 minutes, automatically stop the pipeline.
         // disableConcurrentBuilds() // disable concurrent execution of builds
         // retry(3) // retries the build for specific number of times if build fails
     }
